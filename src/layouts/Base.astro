@@ -1,0 +1,25 @@
+---
+import BaseMeta from "@components/common/BaseMeta.astro";
+import type {  BaseMetaProps } from '@components/common/BaseMeta.astro';
+
+
+export interface Props {
+	seo?: BaseMetaProps;
+}
+
+const { seo } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseMeta {...seo} />
+    <!-- some other scripts comes here -->
+  </head>
+  <body>
+    <slot name="header" />
+    <main>
+      <slot />
+    </main>
+    <slot name="footer" />
+  </body>
+</html>

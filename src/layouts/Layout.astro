@@ -1,0 +1,18 @@
+---
+import Base from '@layouts/Base.astro'
+import Header from '@components/common/Header.astro';
+import type { BaseMetaProps } from '@components/common/BaseMeta.astro';
+
+export interface Props {
+	seo?: BaseMetaProps;
+}
+
+const { seo } = Astro.props as Props;
+---
+
+<Base seo={seo}>
+	<Header slot="header" />
+		  <slot />
+	<!-- <Footer slot="footer" /> -->
+</Base>
+  
